@@ -1,0 +1,37 @@
+# Binaries for programs and plugins
+app
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Output of build process
+bin/
+build/
+
+# Dependency directories (for Go modules)
+vendor/
+
+# Go test binary
+*.test
+
+# VS Code settings
+.vscode/
+
+# IDE or Editor backups and settings
+*.swp
+*.swo
+*.idea/
+
+# Logs
+*.log
+
+# Go coverage tool files
+*.out
+
+# Go module files
+go.sum
+
+# Temporary files
+*.tmp
+*.temp

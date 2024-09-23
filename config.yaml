@@ -1,0 +1,9 @@
+api:
+  port: 8080
+  shutdowntimeout: 3
+openstreetmap:
+  host: https://nominatim.openstreetmap.org
+  timeout: 2
+weather:
+  host: https://api.weather.gov
+  timeout: 2
