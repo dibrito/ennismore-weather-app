@@ -10,7 +10,6 @@ stop:
 	docker rm $(CONTAINER_NAME)
 
 build:
-	go mod vendor
 	go mod tidy
 	GOOS=linux go build -o app ./main.go
 	docker build -t $(DOCKER_HUB_REPOSITORY):$(VERSION) .
