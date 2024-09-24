@@ -72,19 +72,30 @@ GET /weather?city=cairo,los%20angels
 ```
 
 ## requirements
-- go 1.22+
-- docker
+
+- Go 1.22+
+- Docker
 
 ## Setup
-Clone the repository.
-Build and run the application:
-- make run
+
+Clone the repository. Build and run the application:
+```bash
+make run
+```
 The app will expose the /weather endpoint on port 8080.
-- test: curl http://localhost:8080/weather\?city\=los%20angels,%20new%20york,chicago
 
-## improvements
+```bash
+curl http://localhost:8080/weather?city=cairo,los%20angels
+```
+Pull the latest image and docker run:
 
-### code
+```bash
+docker run -d --name ennismore-weather-app-container -d -p 8080:8080 otirbid/ennismore-weather-app:0.0.1
+```
+
+## Improvements & TODOs
+
+### Code
 - add documentation endpoint to be handled by server
 - improve coverage of handler unit-tests
 - add test for clients
@@ -92,15 +103,14 @@ The app will expose the /weather endpoint on port 8080.
 - review all log msgs
 - due to time constraints I did not commit on each new module which is a bad practice!
 
-### reliability and observability
+### Reliability and Observability
 - add retry mechanisms for client calls e.g. based on response like 503
 - rate limiting and throttling
 - add meaninful metrics based of the four Golden Signals(https://sre.google/sre-book/monitoring-distributed-systems/#xref_monitoring_golden-signals)
 - add tracing(Jaeger)
 
-### infra
+### Infra
 - define k8s resources e.g. service,deployments, etc
-
 
 ## Note
 
